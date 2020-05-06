@@ -43,20 +43,6 @@ public class Calculadora {
         }
         int opcion = (int) ingresarUnNumero("Ingrese una opcion");
         switch (opcion) {
-            case 1: //sumar
-                resultado = suma();
-                System.out.println(num1 + "+" + num2 + "=" + resultado);
-                break;
-            case 2: //resta
-                resultado = restar();
-                System.out.println(num1 + "-" + num2 + "=" + resultado);
-                break;
-            case 3: /*Multiplicacion
-                    (Fernando Robles)
-                    */
-                resultado = multiplicacion();
-                System.out.println(num1 + "*" + num2 + "=" + resultado);
-                break;
             case 4: //Division
                 // (Lorenzo Devia Rubio)
                 // Para evitar altercados con la division por 0, se restringe su uso y se devuelve al menu
@@ -66,18 +52,6 @@ public class Calculadora {
                 } else {
                     System.out.println("Error, el divisor es 0");
                 }
-                break;
-            case 5: /* Potencia
-                    (Fernando Robles)
-                    Utilice el metodo de  "Math.pow" haciendo que la variable "num1" sea la base y "num2" el exponente.
-                    */
-                if(num1==0 && num2==0) {
-                    System.out.println("Se indefine,ya que la base y el exponente son 0");
-                }else{
-                    resultado=potencia();
-                    System.out.println(num1 + "^" + num2 + "=" + resultado);
-                }
-
                 break;
             case 6: //Comparacion
                 System.out.println(comparar());
@@ -118,18 +92,6 @@ public class Calculadora {
         this.num2 = num2;
     }
 
-    public double suma() {
-        //(Lucas Palminio)
-        //Este metodo retorna la suma de los atributos num1 y num2
-        return num1 + num2;
-    }
-
-    public double restar() {
-        //(Lucas Palminio)
-        //Este metodo retorna la resta de los atributos num1 y num2
-        return num1 - num2;
-    }
-
     public String comparar() {
         // (Lorenzo Devia rubio)
         // Primero verifica si ambos numeros son iguales, si es verdadero retorna el mensaje correspondiente en String,
@@ -150,19 +112,6 @@ public class Calculadora {
         return num1 / num2;
         // (Lorenzo Devia rubio)
         //Este metodo retorna la division de los atributos de num1 entre num2
-    }
-
-    public double multiplicacion(){
-        /*Fernando Robles*/
-        return num1 * num2;
-
-    }
-
-    public double potencia(){
-
-        double elevado = Math.pow(num1, num2);
-        return elevado;
-
     }
 
     public void ingresarLosNumeros() {
